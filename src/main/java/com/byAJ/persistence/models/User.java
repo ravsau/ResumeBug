@@ -6,6 +6,7 @@ import org.springframework.data.annotation.*;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -38,9 +39,21 @@ public class User {
     @NotEmpty(message = "Please provide your username")
     private String username;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Collection<Role> roles;
+
+    public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.enabled = enabled;
+        this.username = username;
+    }
+
+    public User() {
+    }
 
 
     @Override
@@ -113,11 +126,11 @@ public class User {
         this.username = username;
     }
 
-    public Set<Role> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
 }

@@ -26,6 +26,7 @@ public class SSUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
             User user = userRepository.findByUsername(username);
+            System.out.println("Ready to authenticate...");
             if (user == null) {
                 System.out.println("user not found with the provided username " + user.toString());
                 return null;
