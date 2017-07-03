@@ -1,13 +1,8 @@
 package com.byAJ.persistence.models;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.data.annotation.*;
-
 import javax.persistence.*;
 import javax.persistence.Id;
 import java.util.Collection;
-import java.util.Set;
 
 @Entity
 public class User {
@@ -15,28 +10,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "email", nullable = false, unique = true)
-    @Email(message = "Please provide a valid e-mail")
-    @NotEmpty(message = "Please provide an e-mail")
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column(name = "password")
-    @org.springframework.data.annotation.Transient
     private String password;
 
     @Column(name = "first_name")
-    @NotEmpty(message = "Please provide your first name")
     private String firstName;
 
     @Column(name = "last_name")
-    @NotEmpty(message = "Please provide your last name")
     private String lastName;
 
     @Column(name = "enabled")
     private boolean enabled;
 
     @Column(name = "username")
-    @NotEmpty(message = "Please provide your username")
     private String username;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -54,7 +43,6 @@ public class User {
 
     public User() {
     }
-
 
     @Override
     public String toString() {
