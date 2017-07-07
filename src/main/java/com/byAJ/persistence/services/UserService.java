@@ -34,13 +34,13 @@ public class UserService {
     }
 
     public void saveUser(User user) {
-        user.setRoles(Arrays.asList(roleRepository.findByRole("USER")));
+        user.setRoles(Arrays.asList(roleRepository.findByRole("SEEKER")));
         user.setEnabled(true);
         userRepository.save(user);
     }
 
-    public void saveAdmin(User user) {
-        user.setRoles(Arrays.asList(roleRepository.findByRole("ADMIN")));
+    public void saveRecruiter(User user) {
+        user.setRoles(Arrays.asList(roleRepository.findByRole("RECRUITER")));
         user.setEnabled(true);
         userRepository.save(user);
     }
