@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:th="http://www.thymeleaf.org"
+         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume.com</title>
+    <th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+<th:block th:replace="base :: nav"></th:block>
+
+<div class="container">
+    <br /><br /><br />
+    <h4>Search the best candidate by their jobs, school or school.</h4>
+    <p th:text="#{name}">
+ 
+ <p> Here are the results!</p>
+ 
+  <p th:text="#{name}">
+   <p th:text="#{email}">
+  
+ <!-- 
+  <p  th:each = "job:${jobs}">
+   	<p th:text="${job.jtitle}"/>
+  	<p th:text="${job.jcompany}"/>
+  	<p th:text="${job.sdate}"/>
+  	  	<p th:text="${job.edate}"/>
+  	  	  	<p th:text="${job.duty1}"/>
+  	  	  	  	<p th:text="${job.duty2}"/>
+  
+  
+  
+  </p>
+  
+  
+ 
+ <p  th:each = "edu:${education}">
+   	<p th:text="${edu.degree}"/>
+  	<p th:text="${edu.institution}"/>
+  	<p th:text="${edu.year}"/>
+  
+  
+  
+  </p>
+  
+   <p  th:each = "skill:${skills}">
+   	<p th:text="${skill.skill}"/>
+  	<p th:text="${skill.proficiency}"/>
+ 
+  
+  
+  
+  </p>
+  
+  -->
+        
+
+</div><!-- /.container -->
+
+<th:block th:replace="base :: footlinks"></th:block>
+</body>
+</html>

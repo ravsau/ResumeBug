@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spring Security Example</title>
+    <title>Resume.com</title>
     <th:block th:replace="base :: head"></th:block>
 </head>
 <body>
@@ -14,27 +14,24 @@
 
 <div class="container">
     <br /><br /><br />
-    <h4>Education</h4>
+    <h4>Jobs</h4>
     <p th:text="${name}">
-
-    <form autocomplete="off" action="#" th:action="@{/education}"
-          th:object="${edu}" method="post">
+  
+    <form autocomplete="off" action="#" th:action="@{/skill}"
+           th:object="${skill}" method="post">
         <div class="form-group">
            <!--   <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span></strong></mark></label>-->
-            <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}">Degree can't be empty</span></strong></mark></label>
-            <input type="text" class="form-control" id="degree" placeholder="Bachelors in Science" th:field="*{degree}" />
+            <label for="skill">Skill<mark><strong><span th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}">can't be empty</span></strong></mark></label>
+            <input type="text" class="form-control" id="skill" placeholder="Engineer" th:field="*{skill}" />
         </div>
         <div class="form-group">
-            <label for="institution">University <mark><strong><span th:if="${#fields.hasErrors('institution')}" th:errors="*{institution}">Degree can't be empty</span></strong></mark></label>
-            <input type="text" class="form-control" id="institution" placeholder="UMD" th:field="*{institution}" />
-        </div>
-        <div class="form-group">
-            <label for="year">Graduation Year <mark><strong><span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Degree can't be empty</span></strong></mark></label>
-            <input type="text" class="form-control" id="year" placeholder="2000" th:field="*{year}" />
+            <label for="proficiency">Proficiency( Beginner, Proficient, Expert) <mark><strong><span th:if="${#fields.hasErrors('proficiency')}" th:errors="*{proficiency}"> can't be empty</span></strong></mark></label>
+            <input type="text" class="form-control" id="proficiency" placeholder="Expert" th:field="*{proficiency}" />
         </div>
         
+        
         <div class="form-group">
-            <p>Enter More Education?</p>
+            <p>Enter More Skills?</p>
 	
 		<input type="radio" name="yesOrNo" value="yes"> Yes
 		<input type="radio" name="yesOrNo" value="no" checked> No

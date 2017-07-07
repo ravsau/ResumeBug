@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org ">
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,9 +33,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="/login">Login</a></li>
                  <li><a href="/register">Register</a></li>
-        
-                <li><a href="/postresume">Post Resume</a></li>
-                 <li><a href="/search">Search Resume</a></li>
+                   <li><a sec:authorize="isAuthenticated()" href="/myresume">My Resume</a></li>
+                <li><a sec:authorize="isAuthenticated()" href="/addresume">Post Resume</a></li>
+                 <li><a  sec:authorize="isAuthenticated()"href="/search">Search Resume</a></li>
                 <li><a href="/logout">Logout</a></li>
                 
             </ul>

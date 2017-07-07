@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:th="http://www.thymeleaf.org"
+         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume.com</title>
+    <th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+<th:block th:replace="base :: nav"></th:block>
+
+<div class="container">
+    <br /><br /><br />
+    <h4>Jobs</h4>
+    <p th:text="${name}">
+  
+    <form autocomplete="off" action="#" th:action="@{/job}"
+          th:object="${job}" method="post">
+        <div class="form-group">
+           <!--   <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span></strong></mark></label>-->
+            <label for="jobTitle">Job Title<mark><strong></strong></mark></label>
+            <input type="text" class="form-control" id="jobTitle" placeholder="Engineer" th:field="*{jtitle}" />
+        </div>
+        <div class="form-group">
+            <label for="jCompany">Company <mark><strong></strong></mark></label>
+            <input type="text" class="form-control" id="jCompany" placeholder="Google" th:field="*{jcompany}" />
+        </div>
+        <div class="form-group">
+            <label for="sdate">Start Date <mark><strong></strong></mark></label>
+            <input type="date" class="form-control" id="sdate" placeholder="2000" th:field="*{sdate}" />
+        </div>
+        <div class="form-group">
+            <label for="edate">End Date <mark><strong></strong></mark></label>
+            <input type="date" class="form-control" id="edate" placeholder="2001" th:field="*{edate}" />
+        </div>
+        <div class="form-group">
+            <label for="duty1">Duty 1 <mark><strong></strong></mark></label>
+            <input type="text" class="form-control" id="duty1" placeholder="Programming" th:field="*{duty1}" />
+        </div>
+        
+        <div class="form-group">
+            <label for="duty2">Duty 2 <mark><strong></strong></mark></label>
+            <input type="text" class="form-control" id="duty2" placeholder="Conducting weekly Meetings" th:field="*{duty2}" />
+        </div>
+        
+        <div class="form-group">
+            <p>Enter More Jobs?</p>
+	
+		<input type="radio" name="yesOrNo" value="yes"> Yes
+		<input type="radio" name="yesOrNo" value="no" checked> No
+		
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+</div><!-- /.container -->
+
+<th:block th:replace="base :: footlinks"></th:block>
+</body>
+</html>

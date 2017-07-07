@@ -15,12 +15,14 @@
 <div class="container">
     <br /><br />
     <div class="starter-template">
-        <h1>SecureBones</h1>
-        <p class="lead"><br /> Welcome Professionals!</p>
+        <h1>RESUME.COM</h1>
+      Welcome, <p sec:authentication="name"/>
     </div>
-    <div sec:authentication="name">
+    <!--  <div sec:authentication="name">
         The value of the "name" property of the authentication object should appear here.
-    </div>
+    </div>-->
+    
+    
     <div sec:authorize="isAuthenticated()">
         This content is only shown to authenticated users.<br />
         Logged user: <span sec:authentication="name">Bob</span><br />
