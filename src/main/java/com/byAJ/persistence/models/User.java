@@ -33,20 +33,7 @@ public class User {
     @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
     
-    //education
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "education_id"))
-    private Collection<Education> educations;
-    
-    //jobs
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "job_id"))
-    private Collection<Job> jobs;
-    
-    //skills
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "skills_id"))
-    private Collection<Skills> skills;
+
 
     
 	public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
@@ -138,28 +125,7 @@ public class User {
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
-    public Collection<Education> getEducations() {
-		return educations;
-	}
+ 
 
-	public void setEducations(Collection<Education> educations) {
-		this.educations = educations;
-	}
-
-	public Collection<Job> getJobs() {
-		return jobs;
-	}
-
-	public void setJobs(Collection<Job> jobs) {
-		this.jobs = jobs;
-	}
-
-	public Collection<Skills> getSkills() {
-		return skills;
-	}
-
-	public void setSkills(Collection<Skills> skills) {
-		this.skills = skills;
-	}
 
 }

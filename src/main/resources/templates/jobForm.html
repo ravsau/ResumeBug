@@ -16,12 +16,12 @@
     <br /><br /><br />
     <h4>Jobs</h4>
     <p th:text="${name}">
-  
+
     <form autocomplete="off" action="#" th:action="@{/job}"
           th:object="${job}" method="post">
         <div class="form-group">
            <!--   <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span></strong></mark></label>-->
-            <label for="jobTitle">Job Title<mark><strong></strong></mark></label>
+              <label for="jobTitle">Job Title<mark><strong></strong></mark></label>
             <input type="text" class="form-control" id="jobTitle" placeholder="Engineer" th:field="*{jtitle}" />
         </div>
         <div class="form-group">
@@ -29,12 +29,12 @@
             <input type="text" class="form-control" id="jCompany" placeholder="Google" th:field="*{jcompany}" />
         </div>
         <div class="form-group">
-            <label for="sdate">Start Date <mark><strong></strong></mark></label>
-            <input type="date" class="form-control" id="sdate" placeholder="2000" th:field="*{sdate}" />
+            <label for="sdate">Start Year <mark><strong></strong></mark></label>
+            <input type="number" class="form-control" id="sdate" placeholder="2000" th:field="*{sdate}" />
         </div>
         <div class="form-group">
-            <label for="edate">End Date <mark><strong></strong></mark></label>
-            <input type="date" class="form-control" id="edate" placeholder="2001" th:field="*{edate}" />
+            <label for="edate">End year <mark><strong></strong></mark></label>
+            <input type="number" class="form-control" id="edate" placeholder="2001" th:field="*{edate}" />
         </div>
         <div class="form-group">
             <label for="duty1">Duty 1 <mark><strong></strong></mark></label>
@@ -55,8 +55,9 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+    
+    
 
-</div><!-- /.container -->
 
 <th:block th:replace="base :: footlinks"></th:block>
 </body>

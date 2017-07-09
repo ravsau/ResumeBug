@@ -24,9 +24,9 @@ public class DataLoader implements CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
         System.out.println("Loading data . . .");
-/*
-        roleRepository.save(new Role("USER"));
-        roleRepository.save(new Role("ADMIN"));
+
+       roleRepository.save(new Role("SEEKER"));
+       roleRepository.save(new Role("RECRUITER"));
 
         Role adminRole = roleRepository.findByRole("ADMIN");
         Role userRole = roleRepository.findByRole("USER");
@@ -48,6 +48,5 @@ public class DataLoader implements CommandLineRunner{
         userRepository.save(user);
 
 
-*/
     }
 }

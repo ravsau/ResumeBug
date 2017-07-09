@@ -20,82 +20,69 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@NotEmpty
+
 	private String jtitle; 
-	@NotEmpty
+	
 	private String jcompany; 
-	@NotEmpty
-	private LocalDateTime sdate; 
-	@NotEmpty
-	private LocalDateTime edate;
+	
+	private int sdate; 
+	
+	private int edate;
+	
+	private String username;
+	
+
+	private String duty1;
+	
+	private String duty2;
+	
 	public String getJtitle() {
 		return jtitle;
 	}
-
 	public void setJtitle(String jtitle) {
 		this.jtitle = jtitle;
 	}
-
 	public String getJcompany() {
 		return jcompany;
 	}
-
 	public void setJcompany(String jcompany) {
 		this.jcompany = jcompany;
 	}
-
-	public LocalDateTime getSdate() {
+	public int getSdate() {
 		return sdate;
 	}
-
-	public void setSdate(LocalDateTime sdate) {
+	public void setSdate(int sdate) {
 		this.sdate = sdate;
 	}
-
-	public LocalDateTime getEdate() {
+	public int getEdate() {
 		return edate;
 	}
-
-	public void setEdate(LocalDateTime edate) {
+	public void setEdate(int edate) {
 		this.edate = edate;
 	}
-
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	public String getDuty1() {
 		return duty1;
 	}
-
 	public void setDuty1(String duty1) {
 		this.duty1 = duty1;
 	}
-
 	public String getDuty2() {
 		return duty2;
 	}
-
 	public void setDuty2(String duty2) {
 		this.duty2 = duty2;
 	}
-
-	public Set<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-
 	public int getId() {
 		return id;
 	}
-
-	@NotEmpty
-	private String duty1;
-	@NotEmpty
-	private String duty2;
 	
-	 @ManyToOne(cascade=CascadeType.ALL)
-	    private Set<User> users;
-
+	
 	
 
 }
